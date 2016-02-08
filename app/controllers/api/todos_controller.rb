@@ -12,5 +12,10 @@ class Api::TodosController < ApplicationController
     end
   end
 
-  
+  def index
+    @todos = Todo.all
+    #eventually will only be current users todos: current_user.todos  
+    render :index
+  end
+
 end
