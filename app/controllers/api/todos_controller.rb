@@ -32,6 +32,15 @@ class Api::TodosController < ApplicationController
     end
   end
 
+  def destroy
+    @todo = Todo.find(params[:id])
+    if @todo.destroy
+      render :show
+    else
+      render json: @todo.errors.full_messages
+    end
+  end
+
   def edit
   end
 
