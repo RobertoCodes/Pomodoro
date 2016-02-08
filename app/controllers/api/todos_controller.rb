@@ -14,8 +14,14 @@ class Api::TodosController < ApplicationController
 
   def index
     @todos = Todo.all
-    #eventually will only be current users todos: current_user.todos  
+    #eventually will only be current users todos: current_user.todos
     render :index
   end
+
+  def show
+    @todo = Todo.find(params[:id])
+    render :show
+  end
+
 
 end
