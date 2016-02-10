@@ -8,9 +8,10 @@ window.TodosIndex = React.createClass({
     this.setState({ todos: TodoStore.all()});
   },
 
-
-
-
+  componentDidMount: function () {
+    TodoStore.addTodosIndexChangeListener(this._onChange);
+    ApiUtil.fetchAllTodos();
+  },
 
   render: function () {
     return (
