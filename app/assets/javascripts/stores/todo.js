@@ -19,12 +19,12 @@
 
     dispatcherID: AppDispatcher.register(function (payload) {
       switch(payload.actionType) {
-        case TodoContants.TODOS_RECEIVED:
+        case TodoConstants.TODOS_RECEIVED:
         resetTodos(payload.todos);
         TodoStore.emit(TODOS_INDEX_CHANGE_EVENT);
         break;
     }
-    });
+    })
 
 
   });

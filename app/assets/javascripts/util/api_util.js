@@ -1,4 +1,4 @@
-window.ApiUtil = function () {
+window.ApiUtil = {
 
   fetchAllTodos: function () {
     $.ajax({
@@ -9,4 +9,4 @@ window.ApiUtil = function () {
     });
   }
 
-}
+};

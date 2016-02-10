@@ -2,6 +2,7 @@ window.TodosIndex = React.createClass({
 
   getInitialState: function () {
     return { todos: TodoStore.all()};
+    debugger;
   },
 
   _onChange: function () {
@@ -9,6 +10,7 @@ window.TodosIndex = React.createClass({
   },
 
   componentDidMount: function () {
+    debugger;
     TodoStore.addTodosIndexChangeListener(this._onChange);
     ApiUtil.fetchAllTodos();
   },
