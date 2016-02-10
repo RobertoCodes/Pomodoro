@@ -8,4 +8,24 @@ window.TodosIndex = React.createClass({
     this.setState({ todos: TodoStore.all()});
   },
 
+
+
+
+
+  render: function () {
+    return (
+      <div>
+        <ul>
+          {this.state.todos.map(function (todo) {
+            return
+              <div>
+                <TodosIndexItem key={todo.id} todo={todo}/>
+              </div>;
+          }.bind(this))}
+        </ul>
+        {this.props.children}
+      </div>
+    )
+  }
+
 });
