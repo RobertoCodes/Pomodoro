@@ -1,7 +1,7 @@
 window.TodosIndexItem = React.createClass({
 
   getInitialState: function () {
-    this.setState({expanded: false});
+    return ({expanded: false});
   },
 
   handleClick: function () {
