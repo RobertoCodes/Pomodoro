@@ -5,6 +5,6 @@ window.ApiActions = {
     actionType: TodoConstants.TODOS_RECEIVED,
     todos: todos
     });
-  },
+  }
 
 };
