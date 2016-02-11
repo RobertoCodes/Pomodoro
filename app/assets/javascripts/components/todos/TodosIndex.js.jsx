@@ -14,14 +14,16 @@ window.TodosIndex = React.createClass({
   },
 
   render: function () {
+    debugger;
     return (
       <div>
         <ul>
           {this.state.todos.map(function (todo) {
-            return
+            return (
               <div>
                 <TodosIndexItem key={todo.id} todo={todo}/>
-              </div>;
+              </div>
+            )
           }.bind(this))}
         </ul>
         {this.props.children}
