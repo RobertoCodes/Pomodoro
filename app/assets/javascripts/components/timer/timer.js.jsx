@@ -44,6 +44,14 @@ window.Timer = React.createClass({
         secondsString = "" + secondsLeft;
       }
       return (minutesString + ":" + secondsString);
+    },
+
+    render: function () {
+      return (
+        <div>
+          {this.getTimeLeft()}
+        </div>
+      );
     }
 
 });
