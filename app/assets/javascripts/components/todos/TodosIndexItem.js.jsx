@@ -10,16 +10,20 @@ window.TodosIndexItem = React.createClass({
   },
 
   render: function () {
+    var view;
+    if (!this.state.expanded) {
+      view = <li onClick={this.handleClick}>
+              {this.props.todo.name}
+             </li>;
+    } else {
+      view = <li onClick={this.handleClick}>
+        {this.props.todo.name} has {this.props.todo.pomodoros}
+      </li>;
+    }
     return (
-      <li onClick={this.handleClick}>
-        {this.props.todo.name} + {this.props.todo.pomodoros}
-      </li>
-    )
+      view
+    );
   }
-
-
-
-
 
 
 })
