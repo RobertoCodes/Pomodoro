@@ -14,7 +14,6 @@ window.TodosIndex = React.createClass({
   },
 
   render: function () {
-    debugger;
     return (
       <div>
         <ul>

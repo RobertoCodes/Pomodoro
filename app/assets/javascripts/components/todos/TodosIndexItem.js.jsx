@@ -12,12 +12,12 @@ window.TodosIndexItem = React.createClass({
   render: function () {
     var view;
     if (!this.state.expanded) {
-      view = <li onClick={this.handleClick}>
+      view = <li className="group" onClick={this.handleClick}>
               {this.props.todo.name}
              </li>;
     } else {
-      view = <li onClick={this.handleClick}>
-        {this.props.todo.name} has {this.props.todo.pomodoros}
+      view = <li className="group" onClick={this.handleClick}>
+        <span>{this.props.todo.name} {this.props.todo.pomodoros}</span> x <figure id="small-tomato"></figure>
       </li>;
     }
     return (
