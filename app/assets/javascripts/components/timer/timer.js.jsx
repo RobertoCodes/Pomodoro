@@ -4,7 +4,7 @@ window.Timer = React.createClass({
       return ({time: 0});
     },
 
-    componentDidMount: function () {
+    handleStartTimer: function () {
       setInterval( function () {
         seconds = this.state.time
         this.setState({time: seconds + 1});
@@ -34,11 +34,17 @@ window.Timer = React.createClass({
     },
 
     render: function () {
-      return (
-        <div>
-          {this.getTimeLeft()}
-        </div>
-      );
+      if (this.state.started) {
+        return (
+          <div>
+            {this.getTimeLeft()}
+          </div>
+        );
+      } else {
+        return (
+          <button onClick={this.handleEdit}>Start a Pom!</button>
+        )
+      }
     }
 
 });
