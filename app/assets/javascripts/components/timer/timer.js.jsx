@@ -20,6 +20,11 @@ window.Timer = React.createClass({
     stopTimer: function () {
       this.setState({started: false});
       clearInterval(this.intervalId);
+      this.removePomodoro();
+    },
+
+    removePomodoro: function () {
+      ApiUtil.removePomdoro(this.props.todoId);
     },
 
     getTimeLeft: function () {
