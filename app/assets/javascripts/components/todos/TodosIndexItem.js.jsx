@@ -13,6 +13,12 @@ window.TodosIndexItem = React.createClass({
     this.setState({editing: false});
   },
 
+  componentWillUpdate: function () {
+    if (this.state.editing) {
+      this.cancelEditing();
+    }
+  },
+
   handleDelete: function () {
     ApiUtil.deleteTodo(this.props.todo.id);
   },
