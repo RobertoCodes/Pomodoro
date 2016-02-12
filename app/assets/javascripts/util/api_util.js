@@ -1,5 +1,15 @@
 window.ApiUtil = {
 
+  signOut: function () {
+    $.ajax({
+      url: "/session",
+      method: "DELETE",
+      success: function () {
+        window.location.href= "/session/new";
+      }
+    });
+  },
+
   fetchAllTodos: function () {
     $.ajax({
       url: "/api/todos",
@@ -39,6 +49,6 @@ window.ApiUtil = {
         ApiActions.removeOneTodo(todo);
       }
     });
-  }
+  },
 
 };
