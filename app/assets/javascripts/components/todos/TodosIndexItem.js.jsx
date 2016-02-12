@@ -4,7 +4,8 @@ window.TodosIndexItem = React.createClass({
     return ({editing: false});
   },
 
-  handleEdit: function () {
+  handleEdit: function (e) {
+    e.preventDefault();
     this.setState({editing: true});
   },
 
@@ -12,8 +13,10 @@ window.TodosIndexItem = React.createClass({
     var view;
 
     if (!this.state.editing) {
-      view = <li className="group" onClick={this.handleEdit}>
+      view = <li className="group">
         <span>{this.props.todo.name} {this.props.todo.pomodoros}</span> x <figure id="small-tomato"></figure>
+        <button onClick={this.handleEdit}>Edit Todo</button>
+        <button onClick={this.handleStart}>Start a pom</button>
       </li>;
     } else {
       view = <li className="group" onClick={this.handleEdit}>
