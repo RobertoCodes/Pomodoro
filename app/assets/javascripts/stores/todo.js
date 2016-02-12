@@ -8,11 +8,11 @@
     _todos = todos;
   };
 
-  var removeTodo = function (todo) {
+  var deleteTodo = function (todo) {
     var switched = false;
     _todos.forEach(function (td) {
       if (td.id === todo.id) {
-        _todos.splice([_todos.indexOf(td), 1];
+        _todos.splice(_todos.indexOf(td), 1);
       }
     });
   };
@@ -26,7 +26,7 @@
       }
     });
     if(!switched) {_todos.push(todo);}
-  }
+  };
 
   window.TodoStore = $.extend({}, EventEmitter.prototype, {
     all: function () {

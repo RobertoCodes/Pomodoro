@@ -30,6 +30,10 @@ h1, h2, li, ul, div, a, header, figure {
  background: transparent;
 }
 
+ul {
+  list-style: none;
+}
+
 body {
   background: #228b22;
 }
@@ -46,6 +50,12 @@ h1 {
   clear: both;
 }
 
+#todo-item {
+  width: 400px;
+  background-color: #e4e4a1;
+  border-radius: 5px;
+}
+
 #small-tomato {
   background-image: image-url("tomato.png");
   background-repeat: no-repeat;
@@ -54,8 +64,14 @@ h1 {
   display: block;
   width: 32px;
   height: 32px;
+  float: left;
 }
 
 #todo-name {
   width: 300px;
+  float: left;
+}
+
+#num-poms {
+  float: left;
 }

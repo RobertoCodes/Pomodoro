@@ -33,7 +33,7 @@ window.ApiUtil = {
 
   deleteTodo: function (id) {
     $.ajax({
-      url: "/api/todos/" + todo.id,
+      url: "/api/todos/" + id,
       method: "DELETE",
       success: function (todo) {
         ApiActions.removeOneTodo(todo);
