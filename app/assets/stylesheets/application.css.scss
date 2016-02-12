@@ -67,6 +67,17 @@ h1 {
   float: left;
 }
 
+#crushed-tomato {
+  background-image: image-url("crushed.png");
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 150px 150px;
+  display: block;
+  width: 150px;
+  height: 150px;
+  margin: auto;
+}
+
 #todo-name {
   width: 300px;
   float: left;
@@ -74,4 +85,16 @@ h1 {
 
 #num-poms {
   float: left;
+}
+
+#notification {
+  position: absolute;
+  top: 30%;
+  left: 30%;
+  padding: 2%;
+  background: beige;
+  border-radius: 5px;
+  font-size: 64px;
+  font-weight: bold;
+  color: crimson;
 }

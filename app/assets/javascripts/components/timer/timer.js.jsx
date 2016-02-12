@@ -11,7 +11,7 @@ window.Timer = React.createClass({
       this.intervalId = setInterval( function () {
         seconds = this.state.time
         this.setState({time: seconds + 1});
-        if (this.state.time > 1*60) {
+        if (this.state.time > .25*60) {
           this.stopTimer();
         }
       }.bind(this), 1000);
@@ -21,6 +21,7 @@ window.Timer = React.createClass({
       this.setState({started: false, notification: true});
       clearInterval(this.intervalId);
       this.removePomodoro();
+      debugger;
       setTimeout(function () {
         this.setState({notification: false})}.bind(this), 5000
       );
@@ -32,8 +33,8 @@ window.Timer = React.createClass({
     },
 
     getTimeLeft: function () {
-      var totalTime = 1*60;
-      var timeLeft = 1*60 - this.state.time;
+      var totalTime = .25*60;
+      var timeLeft = .25*60 - this.state.time;
       var minutesLeft = parseInt(timeLeft/60);
       var secondsLeft = timeLeft%60;
       var minutesString;
@@ -74,7 +75,7 @@ window.Timer = React.createClass({
       } else if (this.state.notification) {
         return (
           <div>
-            <span>Pomodoro Crushed!</span>
+            <span id="notification">Pomodoro Crushed! <figure id="crushed-tomato"/></span>
             <button onClick={this.handleStartTimer}>Start a Pom!</button>
           </div>
         )
