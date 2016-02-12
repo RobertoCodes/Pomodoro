@@ -39,12 +39,7 @@ window.TodosIndexItem = React.createClass({
       </li>;
     } else {
       view = <li className="group" id="todo-item">
-        <span id="todo-name">{this.props.todo.name}</span>
-          <span className="group" id="num-poms">{this.props.todo.pomodoros} x
-          </span> <figure id="small-tomato"/>
-        <p></p>
         <TodoEditForm todo={this.props.todo}/>
-        <button onClick={this.cancelEditing}>Cancel</button>
       </li>;
     }
 

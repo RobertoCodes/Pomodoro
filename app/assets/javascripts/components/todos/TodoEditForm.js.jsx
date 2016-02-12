@@ -1,7 +1,6 @@
 window.TodoEditForm = React.createClass({
 
   getInitialState: function () {
-    debugger;
     return ({ name: this.props.todo.name, pomodoros: this.props.todo.pomodoros, revealed: true});
   },
 
@@ -28,14 +27,16 @@ window.TodoEditForm = React.createClass({
       );
     } else {
       return (
-        <div id="todo-form">
+        <div id="todo-edit-form">
           <form onSubmit={this.editTodo}>
-            <br></br>
-            <label>Name</label><input id="todo-name" value={this.state.name}
+            <label>Description: </label><input id="todo-name-input" value={this.state.name}
               onChange={this.handleNameChange}/>
-            <br></br>
-              <label>Pomodoros Needed></label><input id="pomodoro-number" type="number" min="1" max="100" onChange={this.handleNumChange} value={this.state.pomodoros}/>
             <br/>
+              <label id="number-label">Pomodoros: </label>
+                <input id="pomodoro-number" type="number" min="1" max="100"
+                  onChange={this.handleNumChange} value={this.state.pomodoros}/>
+            <br/>
+            <button onClick={this.cancelEditing}>Cancel</button>
             <button id="add-todo-button">Update Todo</button>
           </form>
         </div>
