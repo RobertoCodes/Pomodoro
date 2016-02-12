@@ -24,7 +24,8 @@ window.Timer = React.createClass({
     },
 
     removePomodoro: function () {
-      ApiUtil.removePomdoro(this.props.todoId);
+      var todo = {pomodoros: this.props.todo.pomodoros - 1, id: this.props.todo.id};
+      ApiUtil.editTodo(todo);
     },
 
     getTimeLeft: function () {

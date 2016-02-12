@@ -16,7 +16,7 @@ window.TodosIndexItem = React.createClass({
       view = <li className="group">
         <span>{this.props.todo.name} {this.props.todo.pomodoros}</span> x <figure id="small-tomato"></figure>
         <button onClick={this.handleEdit}>Edit Todo</button>
-        <Timer todoId={this.props.todo.id}/>
+        <Timer todo={this.props.todo}/>
       </li>;
     } else {
       view = <li className="group">
