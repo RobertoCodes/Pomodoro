@@ -26,6 +26,7 @@ window.TodosIndex = React.createClass({
           }.bind(this))}
         </ul>
         <Timer/>
+        <TodoForm/>
         {this.props.children}
       </div>
     )
