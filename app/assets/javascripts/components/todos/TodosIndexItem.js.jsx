@@ -13,6 +13,10 @@ window.TodosIndexItem = React.createClass({
     this.setState({editing: false});
   },
 
+  handleDelete: function () {
+    ApiUtil.deleteTodo(this.props.todo);
+  }
+
   render: function () {
     var view;
 
@@ -20,6 +24,8 @@ window.TodosIndexItem = React.createClass({
       view = <li className="group">
         <span>{this.props.todo.name} {this.props.todo.pomodoros}</span> x <figure id="small-tomato"></figure>
         <button onClick={this.handleEdit}>Edit Todo</button>
+        <button onClick={this.handleDelete}>Remove from List</button>
+
         <Timer todo={this.props.todo}/>
       </li>;
     } else {
