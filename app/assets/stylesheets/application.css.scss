@@ -30,22 +30,16 @@ h1, h2, li, ul, div, a, header, figure {
  background: transparent;
 }
 
-input {
-  margin-bottom: 10px;
-}
-
 ul {
   list-style: none;
-}
-
-body {
-  background: #228b22;
 }
 
 h1 {
   font-size: 36px;
   color: darkred;
   font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
 }
 
 li {
@@ -85,15 +79,31 @@ button:hover {
  outline: none;
 }
 
+form > span {
+  display: block;
+  margin-left: 5px;
+}
+
+form > span:first-child {
+  padding-top: 10px;
+}
+
 .group:after {
   content: "";
   display: block;
   clear: both;
 }
 
+#todo {
+  position: absolute;
+  left: 25%;
+  padding: 20px 150px;
+  background: #a8a8a8;
+}
+
 #todo-item {
   width: 400px;
-  background-color: #e4e4a1;
+  background: lightcoral;
   border-radius: 5px;
 }
 
@@ -127,7 +137,7 @@ button:hover {
 }
 
 #todo-name-input {
-  width: 300px;
+  width: 250px;
 }
 
 #num-poms {
@@ -139,7 +149,7 @@ button:hover {
   top: 30%;
   left: 30%;
   padding: 2%;
-  background: beige;
+  background: lightcoral;
   border-radius: 5px;
   font-size: 64px;
   font-weight: bold;
@@ -154,10 +164,11 @@ button:hover {
 
 #todo-form {
   width: 400px;
-  background: #e4e4a1;
+  background: #90EE90;
   border-radius: 5px;
   margin-top: 25px;
   height: 125px;
+  padding-bottom: 10px;
 }
 
 #number-label {

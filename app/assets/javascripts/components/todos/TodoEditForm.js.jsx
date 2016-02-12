@@ -29,12 +29,14 @@ window.TodoEditForm = React.createClass({
       return (
         <div id="todo-edit-form">
           <form onSubmit={this.editTodo}>
-            <label>Description: </label><input id="todo-name-input" value={this.state.name}
+            <span><label>Description: </label><input id="todo-name-input" value={this.state.name}
               onChange={this.handleNameChange}/>
+            </span>
             <br/>
-              <label id="number-label">Pomodoros: </label>
+            <span><label id="number-label">Pomodoros: </label>
                 <input id="pomodoro-number" type="number" min="1" max="100"
                   onChange={this.handleNumChange} value={this.state.pomodoros}/>
+            </span>
             <br/>
             <button onClick={this.cancelEditing}>Cancel</button>
             <button id="add-todo-button">Update Todo</button>

@@ -32,8 +32,8 @@ window.TodosIndexItem = React.createClass({
           <span className="group" id="num-poms">{this.props.todo.pomodoros} x
           </span> <figure id="small-tomato"/>
         <p></p>
-        <button onClick={this.handleEdit}>Edit</button>
         <button onClick={this.handleDelete}>Remove</button>
+        <button onClick={this.handleEdit}>Edit</button>
 
         <Timer todo={this.props.todo}/>
       </li>;
