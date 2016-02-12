@@ -8,6 +8,15 @@
     _todos = todos;
   };
 
+  var removeTodo = function (todo) {
+    var switched = false;
+    _todos.forEach(function (td) {
+      if (td.id === todo.id) {
+        _todos.splice([_todos.indexOf(td), 1];
+      }
+    });
+  };
+
   var resetTodo = function (todo) {
     var switched = false;
     _todos.forEach(function (td) {
@@ -17,7 +26,7 @@
       }
     });
     if(!switched) {_todos.push(todo);}
-  };
+  }
 
   window.TodoStore = $.extend({}, EventEmitter.prototype, {
     all: function () {
@@ -37,7 +46,11 @@
         case TodoConstants.TODO_RECEIVED:
           resetTodo(payload.todo);
           TodoStore.emit(TODOS_INDEX_CHANGE_EVENT);
-
+        break;
+        case TodoConstants.TODO_REMOVED:
+          deleteTodo(payload.todo);
+          TodoStore.emit(TODOS_INDEX_CHANGE_EVENT);
+        break;
     }
     })
 
