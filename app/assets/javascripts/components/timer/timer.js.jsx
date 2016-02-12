@@ -54,12 +54,18 @@ window.Timer = React.createClass({
       this.setState({started: false});
     },
 
+    handleEarlyFinish: function () {
+      this.setState({started: false});
+      this.removePomodoro();
+    },
+
     render: function () {
       if (this.state.started) {
         return (
           <div>
             {this.getTimeLeft()}
             <button onClick={this.handleCancel}>Cancel</button>
+            <button onClick={this.handleEarlyFinish}>Finish Early!</button>
           </div>
         );
       } else {
