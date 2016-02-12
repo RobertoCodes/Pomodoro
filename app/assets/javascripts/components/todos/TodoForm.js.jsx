@@ -4,6 +4,14 @@ window.TodoForm = React.createClass({
     return ({ name: "", pomodoros: 1});
   },
 
+  handleNumChange: function (e) {
+    this.setState({pomodoros: e.target.value});
+  },
+
+  handleNameChange: function (e) {
+    this.setState({name: e.target.value});
+  },
+
   render: function () {
     return (
       <div id="todo-form">
