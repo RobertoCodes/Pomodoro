@@ -24,14 +24,14 @@ window.TodoForm = React.createClass({
     return (
       <div id="todo-form">
         <form onSubmit={this.createTodo}>
-          <h3 id="form-title">Add a Todo</h3>
+          <h3 id="form-title">Add a To-Do</h3>
           <label>Description: </label><input id="todo-name-input" value={this.state.name}
             onChange={this.handleNameChange} placeholder="What do you need to do?"/>
           <br/>
           <label id="number-label">Pomodoros: </label><input id="pomodoro-number"
             type="number" min="1" max="100" onChange={this.handleNumChange} value={this.state.pomodoros}/>
           <br/>
-          <button id="add-todo-button">Add Todo</button>
+          <button id="add-todo-button">Add to List</button>
         </form>
       </div>
     );

@@ -71,8 +71,11 @@ window.Timer = React.createClass({
     render: function () {
       if (this.state.started) {
         return (
-          <div>
+          <div id="timer">
+            <span>Focus!</span>
+            <br/>
             {this.getTimeLeft()}
+            <br/>
             <button onClick={this.handleCancel}>Cancel</button>
             <button onClick={this.handleEarlyFinish}>Finish Early!</button>
           </div>
@@ -87,9 +90,13 @@ window.Timer = React.createClass({
           </div>
         );
       } else if (this.props.todo.pomodoros > 0) {
+
         return (<button onClick={this.handleStartTimer}>Start a Pom!</button>);
+
       } else {
+
         return (<div></div>);
+
       }
     }
 

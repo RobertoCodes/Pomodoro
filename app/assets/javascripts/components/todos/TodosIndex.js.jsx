@@ -19,9 +19,7 @@ window.TodosIndex = React.createClass({
         <ul>
           {this.state.todos.map(function (todo) {
             return (
-              <div>
                 <TodosIndexItem key={todo.id} todo={todo}/>
-              </div>
             )
           }.bind(this))}
         </ul>

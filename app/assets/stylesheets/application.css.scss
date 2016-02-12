@@ -44,8 +44,16 @@ body {
 
 h1 {
   font-size: 36px;
-  color: #FF6347;
+  color: darkred;
   font-weight: bold;
+}
+
+li {
+  margin-bottom: 20px;
+}
+
+li > span {
+  margin: 10px;
 }
 
 button {
@@ -56,9 +64,9 @@ button {
   color: white;
   font-size: 14px;
   padding-left: 5px;
-  width: 125px;
+  width: 100px;
   cursor: pointer;
-  margin-top: 5px;
+  margin: 7px;
 }
 
 button:focus {
@@ -98,6 +106,8 @@ button:hover {
   width: 32px;
   height: 32px;
   float: left;
+  margin-top: -15px;
+  margin-left: -5px;
 }
 
 #crushed-tomato {
@@ -144,7 +154,7 @@ button:hover {
 
 #todo-form {
   width: 400px;
-  background: lightgray;
+  background: #e4e4a1;
   border-radius: 5px;
   margin-top: 25px;
   height: 125px;
@@ -167,4 +177,16 @@ button:hover {
 
 #todo-edit-form {
   margin-top: 16px;
+}
+
+#timer {
+  position: absolute;
+  right: 40%;
+  top: 45%;
+  background: darkred;
+  border-radius: 15px;
+  padding: 50px;
+  font-size: 50px;
+  text-align: center;
+  color: whitesmoke;
 }
