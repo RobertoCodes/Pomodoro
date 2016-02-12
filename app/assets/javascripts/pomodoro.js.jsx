@@ -9,6 +9,7 @@ $(function () {
   if (rootEl !== null) {
     React.render((
       <div className="pomodoro">
+        <SignOut id="sign-out"/>
         <Router>
           <Route path="/" component={Index}>
             <IndexRoute component={TodosIndex}/>
