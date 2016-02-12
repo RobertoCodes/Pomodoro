@@ -50,11 +50,16 @@ window.Timer = React.createClass({
       return (minutesString + ":" + secondsString);
     },
 
+    handleCancel: function () {
+      this.setState({started: false});
+    },
+
     render: function () {
       if (this.state.started) {
         return (
           <div>
             {this.getTimeLeft()}
+            <button onClick={this.handleCancel}>Cancel</button>
           </div>
         );
       } else {

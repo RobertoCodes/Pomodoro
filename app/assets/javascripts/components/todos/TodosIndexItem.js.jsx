@@ -11,7 +11,7 @@ window.TodosIndexItem = React.createClass({
 
   cancelEditing: function () {
     this.setState({editing: false});
-  }
+  },
 
   render: function () {
     var view;
