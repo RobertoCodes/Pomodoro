@@ -16,10 +16,10 @@ window.TodosIndexItem = React.createClass({
       view = <li className="group">
         <span>{this.props.todo.name} {this.props.todo.pomodoros}</span> x <figure id="small-tomato"></figure>
         <button onClick={this.handleEdit}>Edit Todo</button>
-        <button onClick={this.handleStart}>Start a pom</button>
+        <Timer/>
       </li>;
     } else {
-      view = <li className="group" onClick={this.handleEdit}>
+      view = <li className="group">
         <span>{this.props.todo.name} {this.props.todo.pomodoros}</span> x <figure id="small-tomato"></figure>
         <TodoEditForm todo={this.props.todo}/>
       </li>;
