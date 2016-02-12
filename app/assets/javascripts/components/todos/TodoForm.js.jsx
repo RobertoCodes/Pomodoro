@@ -1,7 +1,7 @@
 window.TodoForm = React.createClass({
 
   getInitialState: function () {
-    return ({ name: "", pomodoros: 1});
+    return ({ name: "", pomodoros: "1"});
   },
 
   handleNumChange: function (e) {
@@ -10,6 +10,16 @@ window.TodoForm = React.createClass({
 
   handleNameChange: function (e) {
     this.setState({name: e.target.value});
+  },
+
+  createTodo: function () {
+    e.preventDefault();
+    var todo = {};
+    Object.keys(this.state).forEach(function (key) {
+      todo[key] = this.state[key];
+    }.bind(this));
+    this.setState({ name: "", pomodoros: ""});
+    ApiUtil.createTodo(todo);
   },
 
   render: function () {
