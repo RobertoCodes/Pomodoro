@@ -11,7 +11,7 @@ window.Timer = React.createClass({
       this.intervalId = setInterval( function () {
         seconds = this.state.time
         this.setState({time: seconds + 1});
-        if (this.state.time > 25*60) {
+        if (this.state.time > .25*60) {
           this.stopTimer();
         }
       }.bind(this), 1000);
@@ -21,10 +21,6 @@ window.Timer = React.createClass({
       this.setState({started: false, notification: true});
       clearInterval(this.intervalId);
       this.removePomodoro();
-      debugger;
-      setTimeout(function () {
-        this.setState({notification: false})}.bind(this), 5000
-      );
     },
 
     removePomodoro: function () {
@@ -33,8 +29,8 @@ window.Timer = React.createClass({
     },
 
     getTimeLeft: function () {
-      var totalTime = 25*60;
-      var timeLeft = 25*60 - this.state.time;
+      var totalTime = .25*60;
+      var timeLeft = .25*60 - this.state.time;
       var minutesLeft = parseInt(timeLeft/60);
       var secondsLeft = timeLeft%60;
       var minutesString;
@@ -56,7 +52,7 @@ window.Timer = React.createClass({
 
     handleCancel: function () {
       clearInterval(this.intervalId);
-      this.setState({started: false});
+      this.setState({started: false, time: 0});
     },
 
     handleEarlyFinish: function () {
@@ -72,7 +68,7 @@ window.Timer = React.createClass({
       if (this.state.started) {
         return (
           <div id="timer">
-            <span>Focus!</span>
+            <span id="reminder">Focus on "{this.props.todo.name}"</span>
             <br/>
             {this.getTimeLeft()}
             <br/>
