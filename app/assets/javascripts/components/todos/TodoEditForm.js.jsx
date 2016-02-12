@@ -19,7 +19,7 @@ window.TodoEditForm = React.createClass({
       todo[key] = this.state[key];
     }.bind(this));
     this.setState({ name: "", pomodoros: "", revealed: false});
-    debugger;
+    todo[id] = this.props.todo.id;
     ApiUtil.editTodo(todo);
   },
 

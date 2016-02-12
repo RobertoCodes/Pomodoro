@@ -10,6 +10,7 @@ window.TodosIndexItem = React.createClass({
   },
 
   render: function () {
+    debugger;
     var view;
     if (!this.state.expanded) {
       view = <li className="group" onClick={this.handleClick}>
