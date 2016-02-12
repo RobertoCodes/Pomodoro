@@ -1,6 +1,6 @@
 window.ApiUtil = {
 
-  signOut: function () {
+ signOut: function () {
     $.ajax({
       url: "/session",
       method: "DELETE",

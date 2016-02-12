@@ -239,3 +239,11 @@ form > span:first-child {
 #sign-header {
   color: black;
 }
+
+#signout {
+  position: absolute;
+  right: 28%;
+  top: 4%;
+  z-index: 1;
+  width: 72px;
+}
