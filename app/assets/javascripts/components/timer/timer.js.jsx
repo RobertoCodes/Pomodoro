@@ -55,6 +55,7 @@ window.Timer = React.createClass({
     },
 
     handleCancel: function () {
+      clearInterval(this.intervalId);
       this.setState({started: false});
     },
 
@@ -80,7 +81,7 @@ window.Timer = React.createClass({
         return (
           <div>
             <span id="notification">Pomodoro Crushed! <figure id="crushed-tomato"/>
-              <button id="notifcation-button" onClick={this.handleHideNotification}>Continue</button>
+              <button id="notification-button" onClick={this.handleHideNotification}>Continue</button>
             </span>
             <button onClick={this.handleStartTimer}>Start a Pom!</button>
           </div>
