@@ -9,6 +9,10 @@ window.TodosIndexItem = React.createClass({
     this.setState({editing: true});
   },
 
+  cancelEditing: function () {
+    this.setState({editing: false});
+  }
+
   render: function () {
     var view;
 
@@ -22,6 +26,7 @@ window.TodosIndexItem = React.createClass({
       view = <li className="group">
         <span>{this.props.todo.name} {this.props.todo.pomodoros}</span> x <figure id="small-tomato"></figure>
         <TodoEditForm todo={this.props.todo}/>
+        <button onClick={this.cancelEditing}>Cancel</button>
       </li>;
     }
 
