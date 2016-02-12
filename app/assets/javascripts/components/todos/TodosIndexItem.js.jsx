@@ -15,7 +15,7 @@ window.TodosIndexItem = React.createClass({
 
   handleDelete: function () {
     ApiUtil.deleteTodo(this.props.todo);
-  }
+  },
 
   render: function () {
     var view;

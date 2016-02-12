@@ -29,6 +29,16 @@ window.ApiUtil = {
         ApiActions.receiveOneTodo(todo);
       }
     });
-  }
+  },
+
+  deleteTodo: function (id) {
+    $.ajax({
+      url: "/api/todos/" + todo.id,
+      method: "DELETE",
+      success: function (todo) {
+        ApiActions.removeOneTodo(todo);
+      }
+    });
+  },
 
 };
