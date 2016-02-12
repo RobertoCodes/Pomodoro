@@ -11,7 +11,7 @@ window.Timer = React.createClass({
       this.intervalId = setInterval( function () {
         seconds = this.state.time
         this.setState({time: seconds + 1});
-        if (this.state.time > .25*60) {
+        if (this.state.time > 25*60) {
           this.stopTimer();
         }
       }.bind(this), 1000);
@@ -33,8 +33,8 @@ window.Timer = React.createClass({
     },
 
     getTimeLeft: function () {
-      var totalTime = .25*60;
-      var timeLeft = .25*60 - this.state.time;
+      var totalTime = 25*60;
+      var timeLeft = 25*60 - this.state.time;
       var minutesLeft = parseInt(timeLeft/60);
       var secondsLeft = timeLeft%60;
       var minutesString;
@@ -85,9 +85,11 @@ window.Timer = React.createClass({
             </span>
             <button onClick={this.handleStartTimer}>Start a Pom!</button>
           </div>
-        )
+        );
+      } else if (this.props.todo.pomodoros > 0) {
+        return (<button onClick={this.handleStartTimer}>Start a Pom!</button>);
       } else {
-        return (<button onClick={this.handleStartTimer}>Start a Pom!</button>)
+        return (<div></div>);
       }
     }
 
