@@ -39,6 +39,6 @@ window.ApiUtil = {
         ApiActions.removeOneTodo(todo);
       }
     });
-  },
+  }
 
 };

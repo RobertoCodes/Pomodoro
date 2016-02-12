@@ -12,6 +12,13 @@ window.ApiActions = {
       actionType: TodoConstants.TODO_RECEIVED,
       todo: todo
     });
+  },
+
+  removeOneTodo: function (todo) {
+    AppDispatcher.dispatch({
+      actionType: TodoConstants.TODO_REMOVED,
+      todo: todo
+    });
   }
 
 };
