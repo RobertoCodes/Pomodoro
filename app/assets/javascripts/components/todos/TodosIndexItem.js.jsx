@@ -1,30 +1,30 @@
 window.TodosIndexItem = React.createClass({
 
   getInitialState: function () {
-    return ({expanded: false});
+    return ({editing: false});
   },
 
-  handleClick: function () {
-    expanded = this.state.expanded;
-    this.setState({expanded: !expanded});
+  handleEdit: function () {
+    this.setState({editing: true});
   },
 
   render: function () {
-    debugger;
     var view;
-    if (!this.state.expanded) {
-      view = <li className="group" onClick={this.handleClick}>
-              {this.props.todo.name}
-             </li>;
-    } else {
-      view = <li className="group" onClick={this.handleClick}>
+
+    if (!this.state.editing) {
+      view = <li className="group" onClick={this.handleEdit}>
         <span>{this.props.todo.name} {this.props.todo.pomodoros}</span> x <figure id="small-tomato"></figure>
       </li>;
+    } else {
+      view = <li className="group" onClick={this.handleEdit}>
+        <span>{this.props.todo.name} {this.props.todo.pomodoros}</span> x <figure id="small-tomato"></figure>
+        <TodoEditForm todo={this.props.todo}/>
+      </li>;
     }
+
     return (
       view
     );
   }
-
 
 })

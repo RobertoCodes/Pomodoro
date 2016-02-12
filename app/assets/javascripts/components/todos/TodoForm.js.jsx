@@ -14,10 +14,7 @@ window.TodoForm = React.createClass({
 
   createTodo: function (e) {
     e.preventDefault();
-    var todo = {};
-    Object.keys(this.state).forEach(function (key) {
-      todo[key] = this.state[key];
-    }.bind(this));
+    var todo = { name: this.state.name, pomodoros: this.state.pomodoros};
     this.setState({ name: "", pomodoros: ""});
     debugger;
     ApiUtil.createTodo(todo);

@@ -14,12 +14,8 @@ window.TodoEditForm = React.createClass({
 
   editTodo: function (e) {
     e.preventDefault();
-    var todo = {};
-    Object.keys(this.state).forEach(function (key) {
-      todo[key] = this.state[key];
-    }.bind(this));
+    var todo = { name: this.state.name, pomodoros: this.state.pomodoros, id: this.props.todo.id};
     this.setState({ name: "", pomodoros: "", revealed: false});
-    todo[id] = this.props.todo.id;
     ApiUtil.editTodo(todo);
   },
 
@@ -41,13 +37,13 @@ window.TodoEditForm = React.createClass({
     } else {
       return (
         <div id="todo-form">
-          <form onSubmit={this.createTodo}>
+          <form onSubmit={this.editTodo}>
             <input id="todo-name" value={this.state.name}
               onChange={this.handleNameChange} placeholder="What do you need to do?"/>
             <br/>
               <input id="pomodoro-number" type="number" min="1" max="100" onChange={this.handleNumChange} value={this.state.pomodoros}/>
             <br/>
-            <button id="add-todo-button">Add Todo</button>
+            <button id="add-todo-button">Update Todo</button>
           </form>
         </div>
        );
