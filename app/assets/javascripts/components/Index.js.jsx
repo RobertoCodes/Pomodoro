@@ -3,7 +3,7 @@ window.Index = React.createClass({
   render: function () {
     return(
       <div>
-        <h2>To-Do List</h2>
+        <h1>To-Do List</h1>
         {this.props.children}
       </div>
     );
