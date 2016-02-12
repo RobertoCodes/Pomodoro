@@ -1,19 +1,30 @@
 window.Timer = React.createClass({
 
     getInitialState: function () {
-      return ({time: 0});
+      return ({time: 0, started: false});
     },
 
     handleStartTimer: function () {
-      setInterval( function () {
+      if (!this.state.started) {
+        this.setState({started: true});
+      }
+      this.intervalId = setInterval( function () {
         seconds = this.state.time
         this.setState({time: seconds + 1});
+        if (this.state.time > 2*60) {
+          this.stopTimer();
+        }
       }.bind(this), 1000);
     },
 
+    stopTimer: function () {
+      this.setState({started: false});
+      clearInterval(this.intervalId);
+    },
+
     getTimeLeft: function () {
-      var totalTime = 25*60;
-      var timeLeft = 25*60 - this.state.time;
+      var totalTime = 2*60;
+      var timeLeft = 2*60 - this.state.time;
       var minutesLeft = parseInt(timeLeft/60);
       var secondsLeft = timeLeft%60;
       var minutesString;
@@ -42,7 +53,7 @@ window.Timer = React.createClass({
         );
       } else {
         return (
-          <button onClick={this.handleEdit}>Start a Pom!</button>
+          <button onClick={this.handleStartTimer}>Start a Pom!</button>
         )
       }
     }
