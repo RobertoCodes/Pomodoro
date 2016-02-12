@@ -63,6 +63,10 @@ window.Timer = React.createClass({
       this.removePomodoro();
     },
 
+    handleHideNotification: function () {
+      this.setState({notification: false});
+    },
+
     render: function () {
       if (this.state.started) {
         return (
@@ -75,7 +79,9 @@ window.Timer = React.createClass({
       } else if (this.state.notification) {
         return (
           <div>
-            <span id="notification">Pomodoro Crushed! <figure id="crushed-tomato"/></span>
+            <span id="notification">Pomodoro Crushed! <figure id="crushed-tomato"/>
+              <button id="notifcation-button" onClick={this.handleHideNotification}>Continue</button>
+            </span>
             <button onClick={this.handleStartTimer}>Start a Pom!</button>
           </div>
         )
