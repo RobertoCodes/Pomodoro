@@ -205,3 +205,36 @@ form > span:first-child {
   text-align: center;
   color: whitesmoke;
 }
+
+#enter-form {
+  width: 300px;
+  display: block;
+  text-align: center;
+  margin: auto;
+  background: #90EE90;
+  border-radius: 10px;
+}
+
+#sign-in-input {
+  width: 270px;
+  font-size: 16px;
+  height: 44px;
+  padding: 0px, 10px;
+  margin-bottom: 10px;
+}
+
+#log-button {
+  width: 270px;
+  height: 40px;
+}
+
+#hipster-log-button {
+  width: 270px;
+  height: 40px;
+  margin-top: -125px;
+  margin-bottom: 15px;
+}
+
+#sign-header {
+  color: black;
+}

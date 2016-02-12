@@ -1,16 +1,16 @@
-<h1 class="sign-header">Please Sign Up</h1>
+<h1 id="sign-header">Please Sign Up</h1>
 
-<div class="enter_form">
+<div id="enter-form">
 <figure id="avatar" class="smaller"></figure>
 <br>
 <form action="<%= users_url %>" method="POST">
   <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>"></input>
-  <input class="sign_in_input" type="text" value="" name="user[username]" placeholder="Username"></input><br>
-  <input class="sign_in_input" type="password" value="" name="user[password]" placeholder="Password"></input><br>
+  <input id="sign-in-input" type="text" value="" name="user[username]" placeholder="Username"></input><br>
+  <input id="sign-in-input" type="password" value="" name="user[password]" placeholder="Password"></input><br>
   <h3 class="errors"><%= render partial: "layouts/errors"%><h3>
   <p>
   </p>
-  <button class="log_button" type="submit" value="Sign In">Sign Up</button>
+  <button id="log-button" type="submit" value="Sign In">Sign Up</button>
 </form>
 <p>
 </p>
