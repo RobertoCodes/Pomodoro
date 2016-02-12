@@ -30,10 +30,11 @@ window.TodoEditForm = React.createClass({
       return (
         <div id="todo-form">
           <form onSubmit={this.editTodo}>
-            <input id="todo-name" value={this.state.name}
+            <br></br>
+            <label>Name</label><input id="todo-name" value={this.state.name}
               onChange={this.handleNameChange}/>
-            <br/>
-              <input id="pomodoro-number" type="number" min="1" max="100" onChange={this.handleNumChange} value={this.state.pomodoros}/>
+            <br></br>
+              <label>Pomodoros Needed></label><input id="pomodoro-number" type="number" min="1" max="100" onChange={this.handleNumChange} value={this.state.pomodoros}/>
             <br/>
             <button id="add-todo-button">Update Todo</button>
           </form>
