@@ -44,4 +44,10 @@ class Api::TodosController < ApplicationController
   def edit
   end
 
+  private
+
+  def todo_params
+    params.require(:todo).permit(:name, :pomodoros)
+  end
+
 end

@@ -12,13 +12,14 @@ window.TodoForm = React.createClass({
     this.setState({name: e.target.value});
   },
 
-  createTodo: function () {
+  createTodo: function (e) {
     e.preventDefault();
     var todo = {};
     Object.keys(this.state).forEach(function (key) {
       todo[key] = this.state[key];
     }.bind(this));
     this.setState({ name: "", pomodoros: ""});
+    debugger;
     ApiUtil.createTodo(todo);
   },
 
