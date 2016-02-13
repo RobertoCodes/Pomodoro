@@ -1,4 +1,4 @@
 == Pomodoro To-Do App
 
-A To-Do application that allows users to make To-Do Lists and organize their work using the Pomodoro Technique. 
+A To-Do application that allows users to make To-Do Lists and organize their work using the Pomodoro Technique. Written using Rails and React.
 
