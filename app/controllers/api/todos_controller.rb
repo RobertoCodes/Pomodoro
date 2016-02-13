@@ -5,6 +5,7 @@ class Api::TodosController < ApplicationController
 
   def create
     @todo = Todo.new(todo_params)
+    @todo.user_id = current_user.id
     if @todo.save
       render :show
     else
@@ -13,8 +14,7 @@ class Api::TodosController < ApplicationController
   end
 
   def index
-    @todos = Todo.all
-    #eventually will only be current users todos: current_user.todos
+    @todos = current_user.todos
     render :index
   end
 
