@@ -1,17 +1,18 @@
-# This file should contain all the record creation needed to seed the database with its default values.
-# The data can then be loaded with the rake db:seed (or created alongside the db with db:setup).
-#
-# Examples:
-#
-#   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
-#   Mayor.create(name: 'Emanuel', city: cities.first)
+
+User.destroy_all
 
 Todo.destroy_all
 
-t1 = Todo.create!(name: "Finish outline.", pomodoros: 3)
+hipster = User.create!(username: "hipster01", password: "duuuude")
 
-t2 = Todo.create!(name: "Write novel.", pomodoros: 6)
+t1 = Todo.create!(name: "Write the Great American Novel", pomodoros: 8, user_id: hipster.id)
 
-t3 = Todo.create!(name: "Publish website.", pomodoros: 4)
+t2 = Todo.create!(name: "Brainstorm quinoa salad ideas", pomodoros: 6, user_id: hipster.id)
 
-t4 = Todo.create!(name: "Resolve global warming.", pomodoros: 8)
+t3 = Todo.create!(name: "Fix unicycle", pomodoros: 2, user_id: hipster.id)
+
+t4 = Todo.create!(name: "Sign up for weekly juice sampler", pomodoros: 1, user_id: hipster.id)
+
+t5 = Todo.create!(name: "Get headshots developed", pomodoros: 4, user_id: hipster.id)
+
+t6 = Todo.create!(name: "Find an apartment in Williamsburg", pomodoros: 3, user_id: hipster.id)
